@@ -107,6 +107,76 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/exercises' do
+    exercises = Exercise.all
+    exercises.to_json
+  end
+
+  get '/exercises/:id' do
+    exercise = Exercise.find(params[:id])
+    exercise.to_json
+  end
+
+  # Create action
+post "/workouts" do
+  workout = Workout.new(params[:workout])
+  workout.image = params[:workout][:image].tempfile if params[:workout][:image]
+
+  if workout.save
+    # Success logic
+  else
+    # Error logic
+  end
+end
+
+# Update action
+patch "/workouts/:id" do
+  workout = Workout.find(params[:id])
+  workout.assign_attributes(params[:workout])
+  workout.image = params[:workout][:image].tempfile if params[:workout][:image]
+
+  if workout.save
+    # Success logic
+  else
+    # Error logic
+  end
+end
+
+
   # Start the Sinatra application
   run if app_file == $0
+end
+
+post '/login' do
+  email = params[:email]
+  password = params[:password]
+
+  # Find the user by email
+  user = User.find_by(email: email)
+
+  if user && user.authenticate(password)
+    # Authentication successful
+    session[:user_id] = user.id
+    { message: 'Login successful' }.to_json
+  else
+    # Authentication failed
+    { error: 'Invalid email or password' }.to_json
+  end
+end
+
+# Protected route (requires authentication)
+get '/protected' do
+  # Check if user is authenticated
+  if session[:user_id]
+    { message: 'You are logged in' }.to_json
+  else
+    { error: 'Unauthorized' }.to_json
+  end
+end
+
+# Logout route
+post '/logout' do
+  # Clear the session
+  session.clear
+  { message: 'Logout successful' }.to_json
 end
