@@ -55,6 +55,7 @@ GET /workouts/:id: Retrieve details of a specific workout.
 PUT /workouts/:id: Update details of a specific workout.
 DELETE /workouts/:id: Delete a specific workout.
 Contributing
+
 Contributions to the Workout App project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
 Here's a link to the front-end.
