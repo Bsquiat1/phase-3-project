@@ -52,7 +52,7 @@ GET /exercises/:id: Retrieve details of a specific exercise
 POST /workouts: Create a new workout.
 GET /workouts/:id: Retrieve details of a specific workout.
 PUT /workouts/:id: Update details of a specific workout.
-DELETE /workouts/:id: Delete a specific workout
+DELETE /workouts/:id: Delete a specific workout.
 
 Contributing
 
