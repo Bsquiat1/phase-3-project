@@ -43,6 +43,8 @@ Replace the contents of the src folder with the frontend code.
 Install the required dependencies: npm install.
 Start the React development server: npm start.
 The frontend app will be available at http://localhost:3000.
+
+
 API Endpoints
 GET /exercises: Retrieve a list of all exercises.
 GET /exercises/:id: Retrieve details of a specific exercise
