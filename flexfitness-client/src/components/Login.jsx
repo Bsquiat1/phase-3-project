@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,8 +11,6 @@ const Login = () => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
-  
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -50,27 +46,24 @@ const Login = () => {
         console.log('Login error:', error);
         // Handle any errors that occurred during login
       });
-
-      
   };
   
   return (
-    <div>
-      <h2>Login</h2>
+    <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+      <h2 style={{ textAlign: 'center' }}>Login</h2>
       <form onSubmit={handleLogin}>
-        <div>
+        <div style={{ marginBottom: '10px' }}>
           <label>Email:</label>
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <input type="email" value={email} onChange={handleEmailChange} style={{ width: '100%', padding: '5px' }} />
         </div>
-        <div>
+        <div style={{ marginBottom: '10px' }}>
           <label>Password:</label>
-          <input type="password" value={password} onChange={handlePasswordChange} />
+          <input type="password" value={password} onChange={handlePasswordChange} style={{ width: '100%', padding: '5px' }} />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none' }}>Login</button>
       </form>
     </div>
   );
 };
 
 export default Login;
-

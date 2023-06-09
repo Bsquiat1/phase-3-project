@@ -7,8 +7,8 @@ import Workouts from './components/Workouts';
 import Exercises from './components/Exercises';
 import Login from './components/Login';
 import Register from './components/Register';
-import BackgroundVideo from './components/Backgroundvideo';
 import SearchBar from './components/Searchbar';
+import Navbar from './components/Navbar';
 
 const App = () => {
   const [filteredExercises, setFilteredExercises] = useState([]);
@@ -20,7 +20,8 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <BackgroundVideo />
+        
+        <Navbar />
         <SearchBar onclick={handleSearch} />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,31 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from './Searchbar';
 
 
 const Navbar = () => {
   return (
-    <nav className="navbar relative">
-     
+    <nav className="navbar relative" style={styles.navbar}>
       
-      
-        < SearchBar />
-        
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
+      <ul style={styles.ul}>
+        <li style={styles.li}>
+          <Link to="/" style={styles.link}>Home</Link>
         </li>
-        <li>
-          <Link to="/workouts">Workouts</Link>
+        <li style={styles.li}>
+          <Link to="/workouts" style={styles.link}>Workouts</Link>
         </li>
-        <li>
-          <Link to="/exercises">Exercises</Link>
+        <li style={styles.li}>
+          <Link to="/exercises" style={styles.link}>Exercises</Link>
         </li>
-        <li>
-          <Link to="/login">Login</Link>
+        <li style={styles.li}>
+          <Link to="/login" style={styles.link}>Login</Link>
         </li>
-        <li>
-          <Link to="/register">Register</Link>
+        <li style={styles.li}>
+          <Link to="/register" style={styles.link}>Register</Link>
         </li>
       </ul>
     </nav>
@@ -33,3 +28,26 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const styles = {
+  navbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '1rem',
+    backgroundColor: '#007bff',
+    color: '#fff',
+  },
+  ul: {
+    display: 'flex',
+    listStyle: 'none',
+  },
+  li: {
+    marginLeft: '1rem',
+  },
+  link: {
+    color: '#fff',
+    textDecoration: 'none',
+    fontSize: '1rem',
+  },
+};

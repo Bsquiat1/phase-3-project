@@ -21,11 +21,11 @@ const Exercises = () => {
     : exercises;
 
   return (
-    <div>
-      <h2>Exercises</h2>
-      <div>
-        <label>Select Body Part:</label>
-        <select value={selectedBodyPart} onChange={handleBodyPartChange}>
+    <div className="container">
+      <h2 className="mt-4">Exercises</h2>
+      <div className="mb-3">
+        <label className="form-label">Select Body Part:</label>
+        <select className="form-select" value={selectedBodyPart} onChange={handleBodyPartChange}>
           <option value="">All</option>
           <option value="Chest">Chest</option>
           <option value="Legs">Legs</option>
@@ -34,16 +34,14 @@ const Exercises = () => {
           <option value="Arms">Arms</option>
           <option value="Triceps">Triceps</option>
           <option value="Shoulders">Shoulders</option>
-          
-          
         </select>
       </div>
-      <ul>
+      <ul className="list-group">
         {filteredExercises.map((exercise) => (
-          <li key={exercise.id}>
+          <li className="list-group-item" key={exercise.id}>
             <h3>{exercise.name}</h3>
             <p>{exercise.description}</p>
-            <p>Muscle Group: {exercise.muscle_group}</p>
+            <p className="mb-0">Muscle Group: {exercise.muscle_group}</p>
           </li>
         ))}
       </ul>

@@ -180,3 +180,23 @@ post '/logout' do
   session.clear
   { message: 'Logout successful' }.to_json
 end
+post '/register' do
+  # Extract the registration data from the request body
+  data = JSON.parse(request.body.read)
+  name = data['name']
+  email = data['email']
+  password = data['password']
+
+  # Create a new user using the registration data
+  user = User.create(name: name, email: email, password: password)
+
+  if user.valid?
+    # Registration successful
+    status 201
+    { message: 'Registration successful' }.to_json
+  else
+    # Registration failed
+    status 422
+    { error: 'Registration failed' }.to_json
+  end
+end
