@@ -31,6 +31,7 @@ Install the required gems: bundle install.
 Set up the database by running migrations: rake db:migrate.
 Start the server: bundle exec rake server.
 The backend API will be available at http://localhost:9292.
+
 Frontend Setup
 
 
