@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './Searchbar';
 
+
 const Navbar = () => {
   return (
-    <nav>
+    <nav className="navbar relative">
+     
+      
+      
         < SearchBar />
+        
       <ul>
         <li>
           <Link to="/">Home</Link>
