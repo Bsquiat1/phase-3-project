@@ -22,6 +22,8 @@ React: A JavaScript library for building user interfaces.
 React Router: A routing library for handling navigation in the React frontend.
 Bootstrap: A popular CSS framework for styling the frontend components.
 Installation
+
+
 Backend Setup
 
 
