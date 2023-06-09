@@ -46,6 +46,8 @@ The frontend app will be available at http://localhost:3000.
 
 
 API Endpoints
+
+
 GET /exercises: Retrieve a list of all exercises.
 GET /exercises/:id: Retrieve details of a specific exercise
 POST /workouts: Create a new workout.
