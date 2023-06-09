@@ -1,6 +1,5 @@
 Workout App
 
-
 The Workout App is a web application that allows users to create custom workouts and track their exercises. It consists of a Sinatra API backend and a React frontend.
 
 Features
