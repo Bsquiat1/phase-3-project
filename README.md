@@ -50,6 +50,6 @@ DELETE /workouts/:id: Delete a specific workout.
 Contributing
 Contributions to the Workout App project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-Here's a link to the front-end
+Here's a link to the front-end.
 https://github.com/Bsquiat1/phase-3-project-frontend
 
