@@ -50,4 +50,5 @@ group :test do
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
 end
-gem 'bcrypt', '~> 3.1', '>= 3.1.18'
+gem 'bcrypt', '~> 3.1', require: 'bcrypt'
+gem 'sinatra-flash', '~> 0.3'
