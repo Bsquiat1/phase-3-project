@@ -42,23 +42,7 @@ exercise22 = Exercise.create(name: 'Front Raises', description: 'Exercise for de
 
 
 
-# Create Workout Programs
-# workout_program1 = Workout.create(name: 'Beginner Full Body Workout', description: 'A beginner-level workout program targeting the entire body.')
-# workout_program2 = Workout.create(name: 'Advanced Upper Body Strength', description: 'An advanced-level workout program focusing on upper body strength.')
-# workout_program3 = Workout.create(name: 'Intermediate Cardio Workout', description: 'An intermediate-level workout program for cardiovascular fitness.')
 
-# Associate Workouts with Workout Programs
-# workout_program1.workout.create(name: 'Squat', sets: 3, reps: 12)
-# workout_program1.workout.create(name: 'Bench Press', sets: 3, reps: 10)
-# workout_program1.workout.create(name: 'Deadlift', sets: 3, reps: 8)
-
-# workout_program2.workout.create(name: 'Barbell Shoulder Press', sets: 4, reps: 8)
-# workout_program2.workout.create(name: 'Pull-ups', sets: 4, reps: 10)
-# workout_program2.workout.create(name: 'Dumbbell Rows', sets: 3, reps: 12)
-
-# workout_program3.workout.create(name: 'Treadmill Running', sets: 1, reps: 30)
-# workout_program3.workout.create(name: 'Cycling', sets: 1, reps: 45)
-# workout_program3.workout.create(name: 'Jumping Rope', sets: 3, reps: 60)
 
 
 

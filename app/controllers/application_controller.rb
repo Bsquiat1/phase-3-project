@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # set :public_folder, File.dirname(__FILE__) + '/public'
+  
 
 
   # Welcome route
@@ -30,10 +30,7 @@ class ApplicationController < Sinatra::Base
   end
 
   
-  get '/login' do
-    user = User.find(params[:user])
-    user.to_json
-  end
+ 
 
  
   patch '/users/:id' do
@@ -58,7 +55,43 @@ class ApplicationController < Sinatra::Base
   end
 
   
+  post '/workouts' do
+    workouts = Workout.create(
+      name: params[:name],
+      sets: params[:sets],
+      reps: params[:reps],
+      duration: params[:duration]
+  
+    )
+    workouts.to_json
+  end
+  
+  get '/workouts' do
+    workouts = Workout.all
+    workouts.to_json
+  end
 
+ 
+
+  delete '/workouts' do
+    workouts = Workout.all
+    workouts.destroy_all
+    workouts.to_json
+  end
+  
+
+  delete '/workouts/:id' do
+    workout = Workout.find(params[:id])
+    if workout
+      workout.destroy
+      { message: 'Workout deleted successfully' }.to_json
+    else
+      status 404
+      { error: 'Workout not found' }.to_json
+    end
+  end
+  
+  
 
 post '/register' do
   
@@ -71,24 +104,6 @@ post '/register' do
 
  
 end
-
-post '/workouts' do
-  workouts = Workout.create(
-    name: params[:name],
-    sets: params[:sets],
-    reps: params[:reps],
-    duration: params[:duration]
-
-  )
-  workouts.to_json
-end
-
-get '/workouts' do
-  
-  workouts = Workout.all
-  workouts.to_json
-end
-
 
 
 end
